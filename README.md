@@ -1,4 +1,4 @@
-# 🐍 Safe Python Script Execution Service
+# 🐍 Stacksync Challenge
 
 This project provides a secure API service that allows users to execute arbitrary Python scripts inside a sandboxed environment using [nsjail](https://nsjail.dev/) and [Flask](https://flask.palletsprojects.com/). It ensures isolation and safety against malicious code execution attempts.
 
