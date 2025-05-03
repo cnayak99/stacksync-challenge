@@ -43,9 +43,14 @@ docker run -d -p 8080:8080 --name stacksync-service --privileged stacksync-chall
 
 ## 🔁 Example API Usage
 
-### Endpoint:
+### GCE Endpoint:
 ```
 POST http://34.72.72.150:8080/execute
+```
+
+### Cloud Run Endpoint:
+```
+POST https://stacksync18-208739245329.us-central1.run.app/execute 
 ```
 
 ### Request Body:
@@ -55,9 +60,16 @@ POST http://34.72.72.150:8080/execute
 }
 ```
 
-### Example curl Command:
+### Example curl Command (GCE):
 ```bash
 curl -X POST http://34.72.72.150:8080/execute \
+  -H "Content-Type: application/json" \
+  -d '{"script": "def main():\n    return {\"message\": \"Hello from sandbox!\"}"}'
+```
+
+### Example curl Command (Cloud Run):
+```bash
+curl -X POST https://stacksync18-208739245329.us-central1.run.app/execute \
   -H "Content-Type: application/json" \
   -d '{"script": "def main():\n    return {\"message\": \"Hello from sandbox!\"}"}'
 ```
